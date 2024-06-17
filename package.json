@@ -1,0 +1,29 @@
+{
+    "name": "camping-spot-finder",
+    "version": "1.0.0",
+    "scripts": {
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build"
+    },
+    "dependencies": {
+      "axios": "^0.21.1",
+      "vue": "^3.0.0",
+      "vue-router": "^4.0.0"
+    },
+    "devDependencies": {
+      "autoprefixer": "^10.2.5",
+      "postcss": "^8.2.6",
+      "tailwindcss": "^2.1.2",
+      "@vue/cli-plugin-babel": "~4.5.0",
+      "@vue/cli-plugin-eslint": "~4.5.0",
+      "@vue/cli-service": "~4.5.0",
+      "@vue/compiler-sfc": "^3.0.0",
+      "eslint": "^6.7.2",
+      "eslint-plugin-vue": "^7.0.0",
+      "vue-loader": "^16.0.0-alpha.3",
+      "vue-template-compiler": "^2.6.11"
+    }
+    
+  }
+  
+  
