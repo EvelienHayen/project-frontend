@@ -24,6 +24,8 @@
     </form>
     <div v-if="error" class="error">{{ error }}</div>
   </div>
+  
+  
 </template>
 
 <script>

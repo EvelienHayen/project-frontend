@@ -1,17 +1,28 @@
 <template>
-    <div>
-      <h1 class="text-3xl mb-4">Welcome to Camping Spot Finder</h1>
-      <CampingSpotList />
-    </div>
-  </template>
-  
-  <script>
-  import CampingSpotList from '../components/CampingSpotList.vue';
-  
-  export default {
-    components: {
-      CampingSpotList
-    }
-  };
-  </script>
-  
+  <div class="home">
+    <h2>Welcome to Camping Spots</h2>
+    <search-bar />
+    <spots :spots="spots" />
+  </div>
+</template>
+
+<script>
+import SearchBar from '@/component/SearchBar.vue';
+import Spots from '@/component/spots.vue';
+import { getAllSpots } from '@/service/api';
+
+export default {
+  components: {
+    SearchBar,
+    Spots
+  },
+  data() {
+    return {
+      spots: []
+    };
+  },
+  async created() {
+    this.spots = await getAllSpots();
+  }
+};
+</script>

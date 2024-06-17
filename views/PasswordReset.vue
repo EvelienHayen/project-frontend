@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { resetUserPassword } from '@/services/api';
+import { resetUserPassword } from '@/service/api';
 
 export default {
   data() {

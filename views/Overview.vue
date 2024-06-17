@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { getUserBookings } from '@/services/api';
+import { getUserBookings } from '@/service/api';
 
 export default {
   data() {

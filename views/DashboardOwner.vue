@@ -1,20 +1,32 @@
 <template>
-    <div>
-      <h1 class="text-3xl mb-4">Owner Dashboard</h1>
-      <CreateCampingSpot />
-      <CampingSpotList />
-    </div>
-  </template>
-  
-  <script>
-  import CreateCampingSpot from '../components/CreateCampingSpot.vue';
-  import CampingSpotList from '../components/CampingSpotList.vue';
-  
-  export default {
-    components: {
-      CreateCampingSpot,
-      CampingSpotList
+  <div class="dashboard-owner">
+    <h2>My Camping Spots</h2>
+    <ul>
+      <li v-for="spot in spots" :key="spot.id">
+        {{ spot.name }} - {{ spot.location }}
+      </li>
+    </ul>
+    <button @click="createNewSpot">Create New Spot</button>
+  </div>
+</template>
+
+<script>
+import { getOwnerSpots, createCampingSpot } from '@/service/api';
+
+export default {
+  data() {
+    return {
+      spots: []
+    };
+  },
+  async created() {
+    this.spots = await getOwnerSpots();
+  },
+  methods: {
+    async createNewSpot() {
+      const newSpot = await createCampingSpot({ name: 'New Spot', location: 'Unknown' });
+      this.spots.push(newSpot);
     }
-  };
-  </script>
-  
+  }
+};
+</script>

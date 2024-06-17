@@ -2,7 +2,9 @@
   <div class="map-container">
     <h2>Interactive Map</h2>
     <div id="map"></div>
-  </div>  </template>
+
+  </div> 
+   </template>
   
   <script>
   import L from 'leaflet';
